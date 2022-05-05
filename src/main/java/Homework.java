@@ -201,17 +201,17 @@ public class Homework {
         return false;
     }
 
-    static void shiftArray(int[] arr, int n) {
+    static int[] shiftArray(int[] arr, int n) {
         if (n > 0) {
-            moveRight(arr, n);
+            return moveRight(arr, n);
         } else if (n < 0) {
-            moveLeft(arr, -n);
+            return moveLeft(arr, -n);
         } else {
-            System.out.println(Arrays.toString(arr));
+            return arr;
         }
     }
 
-    static void moveRight(int[] arr, int n) {
+    static int[] moveRight(int[] arr, int n) {
         int temp;
         for (int i = 0; i < n; i++) {
             for (int j = arr.length - 1; j > 0; j--) {
@@ -220,10 +220,10 @@ public class Homework {
                 arr[j - 1] = temp;
             }
         }
-        System.out.println(Arrays.toString(arr));
+        return arr;
     }
 
-    static void moveLeft(int[] arr, int n) {
+    static int[] moveLeft(int[] arr, int n) {
         int temp;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < arr.length - 1; j++) {
@@ -232,6 +232,6 @@ public class Homework {
                 arr[j + 1] = temp;
             }
         }
-        System.out.println(Arrays.toString(arr));
+        return arr;
     }
 }
